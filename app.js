@@ -20,8 +20,7 @@ bot.start(ctx=>{
                 } else {
                         if (data.length > 0) {
 
-                                ctx.telegram.sendMessage(ctx.chat.id, `That’s it! We’re going to the moon 🚀 \n\n 🚨 SPECIAL ANNOUNCEMENT! 🚨 \n\n Whitelist sales from Saturday 26th, 2022 @ 1.00 am EST \nJoin @ sales@dexberry.org \nOnly 1000 spots available! \nFirst come First served! \n\nFor Guaranteed spots, \nA. Join our discord server today! \nhttps://discord.gg/2sdPG4zXSW \nB. Level ⬆️ \nC. Contact @dexberrynetwork with wallet address.\n\n🚨 PLS NOTE! 🚨
-                                Get your wallets Whitelisted before Feb 25th.`,{
+                                ctx.telegram.sendMessage(ctx.chat.id, `That’s it! We’re going to the moon 🚀 \n\n 🚨 SPECIAL ANNOUNCEMENT! 🚨 \n\n Whitelist sales from Saturday 26th, 2022 @ 1.00 am EST \nJoin @ sales@dexberry.org \nOnly 1000 spots available! \nFirst come First served! \n\nFor Guaranteed spots, \nA. Join our discord server today! \nhttps://discord.gg/2sdPG4zXSW \nB. Level ⬆️ \nC. Contact @dexberrynetwork with wallet address.\n\n🚨 PLS NOTE! 🚨 \nGet your wallets Whitelisted before Feb 25th.`,{
                                         reply_markup:{
                                                 remove_keyboard: true
                                         },
@@ -132,8 +131,7 @@ const enWizard = new WizardScene('en-wizard',
                         if (e) {
                              console.log(e)   
                         } else {
-                                ctx.telegram.sendMessage(ctx.chat.id, `That’s it! We’re going to the moon 🚀\n\n🚨 SPECIAL ANNOUNCEMENT! 🚨 \n\n Whitelist sales from Saturday 26th, 2022 @ 1.00 am EST \nJoin @ sales@dexberry.org \nOnly 1000 spots available! \nFirst come First served! \n\nFor Guaranteed spots, \nA. Join our discord server today! \nhttps://discord.gg/2sdPG4zXSW \nB. Level ⬆️ \nC. Contact @dexberrynetwork with wallet address.\n\n🚨 PLS NOTE! 🚨
-                                Get your wallets Whitelisted before Feb 25th.`,{
+                                ctx.telegram.sendMessage(ctx.chat.id, `That’s it! We’re going to the moon 🚀 \n\n 🚨 SPECIAL ANNOUNCEMENT! 🚨 \n\n Whitelist sales from Saturday 26th, 2022 @ 1.00 am EST \nJoin @ sales@dexberry.org \nOnly 1000 spots available! \nFirst come First served! \n\nFor Guaranteed spots, \nA. Join our discord server today! \nhttps://discord.gg/2sdPG4zXSW \nB. Level ⬆️ \nC. Contact @dexberrynetwork with wallet address.\n\n🚨 PLS NOTE! 🚨 \nGet your wallets Whitelisted before Feb 25th.`,{
                                         reply_markup:{
                                                 remove_keyboard: true
                                         },
@@ -247,7 +245,7 @@ const cnWizard = new WizardScene('cn-wizard',
                         if (e) {
                         console.log(e)   
                         } else {
-                                ctx.telegram.sendMessage(ctx.chat.id, `您已经提交了您的数据\n\n就是这样！我们要登月了 🚀 \n特别公告！\n从 2022 年 2 月 26 日星期六 @ 东部标准时间上午 1 点开始的销售白名单\n加入 @sales@dexberry.org \n只有 1000 个名额！ \n先到先得！ \n\n对于有保证的名额，\n今天就加入我们的 discord 服务器吧！ \nhttps://discord.gg/2sdPG4zXSW \nLevel ⬆️ \n联系@dexberrynetwork 并提供钱包地址。 \n\n请注意！在 2 月 25 日之前将您的钱包列入白名单。`,{
+                                ctx.telegram.sendMessage(ctx.chat.id, `而已！我们要去月球🚀 \n\n 🚨 特别公告！ 🚨 \n\n 2022 年 2 月 26 日星期六 @ 东部标准时间上午 1 点开始的白名单销售 \n加入 @sales@dexberry.org \n只有 1000 个名额！ \n先到先得！ \n\n对于保证点，\nA。立即加入我们的不和谐服务器！ \nhttps://discord.gg/2sdPG4zXSW \nB。等级⬆️ \nC。联系@dexberrynetwork 并提供钱包地址。\n\n🚨 请注意！ 🚨 \n在 2 月 25 日之前将你的钱包列入白名单。`,{
                                         reply_markup:{
                                                 remove_keyboard: true
                                         },
