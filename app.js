@@ -51,7 +51,7 @@ bot.start(ctx=>{
 const enWizard = new WizardScene('en-wizard',
 
         (ctx)=>{
-                ctx.telegram.sendMessage(ctx.chat.id, `<b>Task 1:</b> \n\nA. Kindly Join our telegram groups \nhttps://t.me/dexberryChinese \n\nB. Type in group: “I want to be Whitelisted"\n\nC. Tap on “done” when completed`,{
+                ctx.telegram.sendMessage(ctx.chat.id, `<b>Task 1:</b> \n\nA. Kindly Join our telegram group \nhttps://t.me/dexberry \n\nB. Type in group: “I want to be Whitelisted" \n\nC. Tap on “done” when completed`,{
                         reply_markup:{
                                 keyboard: [
                                         [{text: "Done"}]
@@ -82,7 +82,7 @@ const enWizard = new WizardScene('en-wizard',
                                         return ctx.wizard.next()
 
                              } else {
-                                ctx.telegram.sendMessage(ctx.chat.id, `Please Join first our groups \n`,{
+                                ctx.telegram.sendMessage(ctx.chat.id, `Kindly join our telegram group`,{
                                         reply_markup:{
                                                 keyboard: [
                                                         [{text: "Try again"}]
@@ -164,7 +164,8 @@ const enWizard = new WizardScene('en-wizard',
 
 const cnWizard = new WizardScene('cn-wizard',
         (ctx)=>{
-                ctx.telegram.sendMessage(ctx.chat.id, `<b>任务1：</b> \n\nA. 请加入我们的电报群 https://t.me/dexberryChinese  \n\nB. 输入组：“我想被列入白名单” \n\nC. 完成后点击“完成”`,{
+                ctx.telegram.sendMessage(ctx.chat.id, `<b>任务1：</b> A. 请加入我们的电报群 \nhttps://t.me/dexberryChinese \n\nB. 输入组：“我想被列入白名单” \n\nC. 完成后点击“完成”
+                `,{
                         reply_markup:{
                                 keyboard: [
                                         [{text: "完成"}]
@@ -195,7 +196,7 @@ const cnWizard = new WizardScene('cn-wizard',
                                         return ctx.wizard.next()
 
                         } else {
-                                ctx.telegram.sendMessage(ctx.chat.id, `请先加入我们的群组`,{
+                                ctx.telegram.sendMessage(ctx.chat.id, `欢迎加入我们的电报群`,{
                                         reply_markup:{
                                                 keyboard: [
                                                         [{text: "再试一次"}]
