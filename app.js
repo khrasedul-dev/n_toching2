@@ -6,7 +6,7 @@ const userModel = require('./userModel')
 // const bot = new Telegraf('5270362344:AAF3M1d97iUdCFCzACGGl0eTU2_MiQNc78Q')
 const bot = new Composer()
 
-mongoose.connect('mongodb://localhost:27017/n_toching',{useNewUrlParser:true,useUnifiedTopology:true}).catch((e)=>{
+mongoose.connect('mongodb+srv://Dexberry1234:Dexberry1234@dexberrywhitelist.8fzh6.mongodb.net/dexberry',{useNewUrlParser:true,useUnifiedTopology:true}).catch((e)=>{
         console.log(e)
 }).then((d)=>console.log('Database connected')).catch((e)=>console.log(e))
 
