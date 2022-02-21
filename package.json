@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "micro-bot": "^2.5.3",
+    "mongoose": "^6.2.2"
+  },
+  "name": "n_toching2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

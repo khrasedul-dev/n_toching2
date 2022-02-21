@@ -1,0 +1,18 @@
+const mongoose = require('mongoose')
+
+const newSchema = new mongoose.Schema({
+    userId: {
+        type: String
+    },
+    name: {
+        type: String
+    },
+    wallet: {
+        type: String
+    },
+    BNB:{
+        type: String
+    }
+},{versionKey: false})
+
+module.exports = mongoose.model('user',newSchema)
