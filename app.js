@@ -18,8 +18,8 @@ bot.start(ctx=>{
                 if (e) {
                         console.log(e)
                 } else {
-                        const finalData = data[0].wallet
-                        if (finalData > 3) {
+                        const finalData = data[0].length
+                        if (finalData > 0) {
 
                                 ctx.telegram.sendMessage(ctx.chat.id, `That’s it! We’re going to the moon 🚀 \n\n 🚨 SPECIAL ANNOUNCEMENT! 🚨 \n\n Whitelist sales from Saturday 26th, 2022 @ 1.00 am EST \nJoin @ sales@dexberry.org \nOnly 1000 spots available! \nFirst come First served! \n\nFor Guaranteed spots, \nA. Join our discord server today! \nhttps://discord.gg/2sdPG4zXSW \nB. Level ⬆️ \nC. Contact @dexberrynetwork with wallet address.\n\n🚨 PLS NOTE! 🚨 \nGet your wallets Whitelisted before Feb 25th.`,{
                                         reply_markup:{
