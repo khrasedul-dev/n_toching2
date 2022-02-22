@@ -18,7 +18,7 @@ bot.start(ctx=>{
                 if (e) {
                         console.log(e)
                 } else {
-                        if (data.length > 0) {
+                        if (data[0].wallet.length > 3) {
 
                                 ctx.telegram.sendMessage(ctx.chat.id, `That’s it! We’re going to the moon 🚀 \n\n 🚨 SPECIAL ANNOUNCEMENT! 🚨 \n\n Whitelist sales from Saturday 26th, 2022 @ 1.00 am EST \nJoin @ sales@dexberry.org \nOnly 1000 spots available! \nFirst come First served! \n\nFor Guaranteed spots, \nA. Join our discord server today! \nhttps://discord.gg/2sdPG4zXSW \nB. Level ⬆️ \nC. Contact @dexberrynetwork with wallet address.\n\n🚨 PLS NOTE! 🚨 \nGet your wallets Whitelisted before Feb 25th.`,{
                                         reply_markup:{
@@ -279,12 +279,27 @@ bot.on('text',ctx=>{
         const c = /白名单/gi
 
         if ( message.match(r) || message.match(c) ) {
-                
-                const data = new userModel({
-                        userId: ctx.from.id,
-                        name: ctx.from.first_name
+
+
+                userModel.find({userId: ctx.from.id}, (e,data)=>{
+                        if (e) {
+                             throw e;   
+                        } else {
+                            if (data.length > 0) {
+                                    console.log("User Already Added")
+                            } else {
+
+                                const data = new userModel({
+                                        userId: ctx.from.id,
+                                        name: ctx.from.first_name,
+                                        wallet: '0',
+                                        BNB: '0'
+                                })
+                                data.save((e)=>console.log(e))
+                            }    
+                        }
                 })
-                data.save((e)=>console.log(e))
+                
         }
 
 })
