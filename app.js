@@ -49,7 +49,7 @@ const enWizard = new WizardScene('en-wizard',
 
         (ctx)=>{
                 ctx.session.user = {}
-                ctx.telegram.sendMessage(ctx.chat.id, `<b>Task 1:</b> \n\nPlease type your name and last-name \n\nC. Tap on “done” when completed`,{
+                ctx.telegram.sendMessage(ctx.chat.id, `<b>Task 1:</b> \n\nPlease type your name and last-name \n\nTap on “done” when completed`,{
                         reply_markup:{
                                 keyboard: [
                                         [{text: "Done"}]
@@ -66,7 +66,7 @@ const enWizard = new WizardScene('en-wizard',
         (ctx)=>{
                 ctx.session.user.name = ctx.update.message.text
 
-                ctx.telegram.sendMessage(ctx.chat.id, `<b>Task 2:</b> \n\Kindly provide your email Address for updates \n\nC. Tap on “done” when completed`,{
+                ctx.telegram.sendMessage(ctx.chat.id, `<b>Task 2:</b> \n\Kindly provide your email Address for updates \n\nTap on “done” when completed`,{
                         reply_markup:{
                                 keyboard: [
                                         [{text: "Done"}]
