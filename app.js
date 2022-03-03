@@ -18,7 +18,7 @@ bot.start(ctx=>{
                 const finalData = data.length
                 if (finalData > 0) {
 
-                        ctx.telegram.sendMessage(ctx.chat.id, `That’s it! We’re going to the moon 🚀 \n\n 🚨 SPECIAL ANNOUNCEMENT! 🚨 \n\n Whitelist sales from Saturday 26th, 2022 @ 1.00 am EST \nJoin @ sales@dexberry.org \nOnly 1000 spots available! \nFirst come First served! \n\nFor Guaranteed spots, \nA. Join our discord server today! \nhttps://discord.gg/2sdPG4zXSW \nB. Level ⬆️ \nC. Contact @dexberrynetwork with wallet address.\n\n🚨 PLS NOTE! 🚨 \nGet your wallets Whitelisted before Feb 25th.`,{
+                        ctx.telegram.sendMessage(ctx.chat.id, `🚨 SPECIAL ANNOUNCEMENT! 🚨 \n\nKindly follow us on social media for updates \n\nJoin Whitelist sales when open\nJoin @ sales@dexberry.org\n\nOnly 2000 spots available!\nFirst come First served! \n\nThank you for believing in us.\nWe will work hard to make us all proud`,{
                                 reply_markup:{
                                         remove_keyboard: true
                                 },
@@ -102,7 +102,7 @@ const enWizard = new WizardScene('en-wizard',
                 userModel.find({userId: ctx.from.id}).then((data)=>{
                         const count = data.length
                         if (count>0) {
-                                ctx.telegram.sendMessage(ctx.chat.id, `Congratulations! You have been Whitelisted! \n\nPlease submit your wallet address`,{
+                                ctx.telegram.sendMessage(ctx.chat.id, `Please submit your wallet address`,{
                                         reply_markup:{
                                                 remove_keyboard: true
                                         },
@@ -157,7 +157,7 @@ const enWizard = new WizardScene('en-wizard',
                 }
                 userModel.updateOne({userId: ctx.from.id},dataUpdate).then((data)=>{
 
-                        ctx.telegram.sendMessage(ctx.chat.id, `🚨 SPECIAL ANNOUNCEMENT! 🚨\n\nKindly follow us on social media for Updates\n\nJoin Whitelist sales when open\nJoin @ sales@dexberry.org\n\nOnly 2000 spots available! \nFirst come First served! \n\nThank you for believing in us. \nWe will work to hard to make us all proud`,{
+                        ctx.telegram.sendMessage(ctx.chat.id, `Congratulations! You have been Whitelisted! \n\n🚨 SPECIAL ANNOUNCEMENT! 🚨 \n\nKindly follow us on social media for updates \n\nJoin Whitelist sales when open\nJoin @ sales@dexberry.org\n\nOnly 2000 spots available!\nFirst come First served! \n\nThank you for believing in us.\nWe will work hard to make us all proud`,{
                                 reply_markup:{
                                         remove_keyboard: true
                                 },
@@ -249,7 +249,7 @@ const cnWizard = new WizardScene('cn-wizard',
                         const count = data.length
                         if (count>0) {
 
-                                ctx.telegram.sendMessage(ctx.chat.id, `恭喜！您已被列入白名单！ \n\n请提交您的钱包地址`,{
+                                ctx.telegram.sendMessage(ctx.chat.id, `请提交您的钱包地址`,{
                                         reply_markup:{
                                                 remove_keyboard: true
                                         },
@@ -304,7 +304,7 @@ const cnWizard = new WizardScene('cn-wizard',
                         BNB: BNB
                 }
                 userModel.updateOne({userId: ctx.from.id},dataUpdate).then((data)=>{
-                        ctx.telegram.sendMessage(ctx.chat.id, `🚨 特别公告！ 🚨\n\n请在社交媒体上关注我们以获取更新\n\n在开放时加入白名单销售\n加入@sales@dexberry.org\n\n仅提供 2000 个名额！ \n先到先得！ \n\n感谢您对我们的信任。 \n我们会努力让我们大家感到自豪`,{
+                        ctx.telegram.sendMessage(ctx.chat.id, `恭喜！您已被列入白名单！ \n\n🚨 特别公告！ 🚨 \n\n请在社交媒体上关注我们以获取更新\n\n在开放时加入白名单销售\n加入@sales@dexberry.org\n\n仅提供 2000 个名额！\n先到先得！ \n\n感谢您对我们的信任。\n我们会努力让我们所有人感到自豪`,{
                                 reply_markup:{
                                         remove_keyboard: true
                                 },
