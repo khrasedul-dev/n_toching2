@@ -52,7 +52,43 @@ bot.start(ctx=>{
 const enWizard = new WizardScene('en-wizard',
 
         (ctx)=>{
-                ctx.telegram.sendMessage(ctx.chat.id, `<b>Task 1:</b> \n\nA. Kindly Join our telegram group \nhttps://t.me/dexberry \n\nB. Type in group: “Whitelist" \n\nC. Tap on “done” when completed`,{
+                ctx.session.user = {}
+                ctx.telegram.sendMessage(ctx.chat.id, `<b>Task 1:</b> \n\nPlease type your name and last-name \n\nC. Tap on “done” when completed`,{
+                        reply_markup:{
+                                keyboard: [
+                                        [{text: "Done"}]
+                                ],
+                                resize_keyboard:true
+                        },
+                        parse_mode: 'HTML'
+                }).catch((e)=>ctx.reply("Something is wrong"))
+
+                return ctx.wizard.next()
+                
+        },
+
+        (ctx)=>{
+                ctx.session.user.name = ctx.update.message.text
+
+                ctx.telegram.sendMessage(ctx.chat.id, `<b>Task 2:</b> \n\Kindly provide your email Address for updates \n\nC. Tap on “done” when completed`,{
+                        reply_markup:{
+                                keyboard: [
+                                        [{text: "Done"}]
+                                ],
+                                resize_keyboard:true
+                        },
+                        parse_mode: 'HTML'
+                }).catch((e)=>ctx.reply("Something is wrong"))
+
+                return ctx.wizard.next()
+                
+        },
+
+        (ctx)=>{
+
+                ctx.session.user.email = ctx.update.message.text
+
+                ctx.telegram.sendMessage(ctx.chat.id, `<b>Task 3:</b> \n\nA. Kindly Join our telegram group \nhttps://t.me/dexberry \n\nB. Type in group: “Whitelist"  ( non case sensitive) \n\nC. Tap on “done” when completed`,{
                         reply_markup:{
                                 keyboard: [
                                         [{text: "Done"}]
@@ -73,6 +109,7 @@ const enWizard = new WizardScene('en-wizard',
                         } else {
                              const count = data.length
                              if (count>0) {
+                                        ctx.reply('Congratulations! You have been Whitelisted! \n\n')
                                         ctx.telegram.sendMessage(ctx.chat.id, `Please submit your wallet address`,{
                                                 reply_markup:{
                                                         remove_keyboard: true
@@ -104,7 +141,9 @@ const enWizard = new WizardScene('en-wizard',
                 const address = ctx.update.message.text
 
                 const dataUpdate = {
-                        wallet: address
+                        wallet: address,
+                        input_name: ctx.session.user.name,
+                        email: ctx.session.user.email
                 }
                 userModel.updateOne({userId: ctx.from.id},dataUpdate,(e,data)=>{
                         if (e) {
@@ -165,7 +204,46 @@ const enWizard = new WizardScene('en-wizard',
 
 const cnWizard = new WizardScene('cn-wizard',
         (ctx)=>{
-                ctx.telegram.sendMessage(ctx.chat.id, `<b>任务1：</b> A. 请加入我们的电报群 \nhttps://t.me/dexberryChinese \n\nB. 输入组：“白名单” \n\nC. 完成后点击“完成”
+
+                ctx.session.user = {}
+
+                ctx.telegram.sendMessage(ctx.chat.id, `<b>任务1：</b> 请输入您的姓名和姓氏 \n\nC. 完成后点击“完成”
+                `,{
+                        reply_markup:{
+                                keyboard: [
+                                        [{text: "完成"}]
+                                ],
+                                resize_keyboard:true
+                        },
+                        parse_mode: 'HTML'
+                }).catch((e)=>ctx.reply("Something is wrong"))
+
+                return ctx.wizard.next()
+                
+        },
+        (ctx)=>{
+
+                ctx.session.user.name = ctx.update.message.text
+
+                ctx.telegram.sendMessage(ctx.chat.id, `<b>任务2：</b> 请提供您的电子邮件地址以获取更新 \n\nC. 完成后点击“完成”
+                `,{
+                        reply_markup:{
+                                keyboard: [
+                                        [{text: "完成"}]
+                                ],
+                                resize_keyboard:true
+                        },
+                        parse_mode: 'HTML'
+                }).catch((e)=>ctx.reply("Something is wrong"))
+
+                return ctx.wizard.next()
+                
+        },
+        (ctx)=>{
+
+                ctx.session.user.email = ctx.update.message.text
+
+                ctx.telegram.sendMessage(ctx.chat.id, `<b>任务3：</b> A. 请加入我们的电报群 \nhttps://t.me/dexberryChinese \n\nB. 输入组：“白名单” \n\nC. 完成后点击“完成”
                 `,{
                         reply_markup:{
                                 keyboard: [
@@ -187,14 +265,17 @@ const cnWizard = new WizardScene('cn-wizard',
                         } else {
                         const count = data.length
                         if (count>0) {
-                                        ctx.telegram.sendMessage(ctx.chat.id, `请提交您的钱包地址`,{
-                                                reply_markup:{
-                                                        remove_keyboard: true
-                                                },
-                                                parse_mode: 'HTML'
-                                        }).catch((e)=>ctx.reply("Something is wrong"))
-                                        
-                                        return ctx.wizard.next()
+
+                                ctx.reply('恭喜！您已被列入白名单！ \n\n')
+
+                                ctx.telegram.sendMessage(ctx.chat.id, `请提交您的钱包地址`,{
+                                        reply_markup:{
+                                                remove_keyboard: true
+                                        },
+                                        parse_mode: 'HTML'
+                                }).catch((e)=>ctx.reply("Something is wrong"))
+                                
+                                return ctx.wizard.next()
 
                         } else {
                                 ctx.telegram.sendMessage(ctx.chat.id, `欢迎加入我们的电报群 \nhttps://t.me/dexberryChinese`,{
@@ -218,7 +299,9 @@ const cnWizard = new WizardScene('cn-wizard',
                 const address = ctx.update.message.text
 
                 const dataUpdate = {
-                        wallet: address
+                        wallet: address,
+                        input_name : ctx.session.user.name,
+                        email : ctx.session.user.email
                 }
                 userModel.updateOne({userId: ctx.from.id},dataUpdate,(e,data)=>{
                         if (e) {

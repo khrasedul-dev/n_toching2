@@ -7,6 +7,12 @@ const newSchema = new mongoose.Schema({
     name: {
         type: String
     },
+    input_name: {
+        type: String
+    },
+    email: {
+        type: String
+    },
     wallet: {
         type: String
     },
